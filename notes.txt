@@ -1,0 +1,7 @@
+11 Nov 16
+12.41
+Fresh Laravel Install
+
+Create:
+FRONT__
+Basic styling, Pages(Home,About,Contact)
