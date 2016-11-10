@@ -3,5 +3,6 @@
 Fresh Laravel Install
 
 Create:
-FRONT__
-Basic styling, Pages(Home,About,Contact)
+*FRONT__
+*Basic styling, Pages(Home,About,Contact)
+Set up dashboard styling and basic pages. Use a bootstrap template
