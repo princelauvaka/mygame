@@ -2,7 +2,15 @@
 12.41
 Fresh Laravel Install
 
-Create:
-*FRONT__
-*Basic styling, Pages(Home,About,Contact)
-Set up dashboard styling and basic pages. Use a bootstrap template
+======================
+To Do:
+======================
+Done-- Basic styling, Pages(Home,About,Contact)
+Done-- Choose template style
+Done-- Set up dashboard parts etc and link.
+
+Create dashboard basic dummy pages
+
+======================
+Last update
+======================

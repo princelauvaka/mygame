@@ -1,6 +1,21 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ URL::asset('assets/js/libs/jquery-3.1.0.min.js') }}"><\/script>')</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="{{ URL::asset('assets/js/plugins.js') }}"></script>
-@yield('scripts')
-<script src="{{ URL::asset('assets/js/main.js') }}"></script>
+    <!--   Core JS Files   -->
+    <script src="assetz/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assetz/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assetz/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assetz/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assetz/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assetz/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assetz/js/demo.js"></script>

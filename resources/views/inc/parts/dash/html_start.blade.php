@@ -1,18 +1,23 @@
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assetz/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Dashboard | @yield('title')</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>@yield('title') | mygame.nz</title>
 
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<!-- Place favicon.ico in the root directory -->
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Bootstrap core CSS     -->
+    <link href="assetz/css/bootstrap.min.css" rel="stylesheet" />
 
-{{-- <link rel="stylesheet" href="{{ URL::asset('assets/style/css/libs.min.css') }}"> --}}
-@yield('stylesheets')
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/style/css/style.css') }}">
-<script src="{{ URL::asset('assets/js/libs/modernizr-2.8.3.min.js') }}"></script>
+    <!-- Animation library for notifications   -->
+    <link href="assetz/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assetz/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assetz/css/pe-icon-7-stroke.css" rel="stylesheet" />

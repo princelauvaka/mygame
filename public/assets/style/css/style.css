@@ -1,0 +1,14 @@
+p,a,h1,h2,h3,h4,h5,h6,body{font-family: 'Lato';}
+
+.pfooter{background-color:#f9f9f9;padding:4em 0;}
+.pfooter p{margin:0;}
+
+.allpost-block{
+	padding:1em;
+	background-color:#f9f9f9;
+	border:5px solid #ffffff;
+}
+
+.m-t{
+	margin-top:15px;
+}
