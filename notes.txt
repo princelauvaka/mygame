@@ -8,9 +8,8 @@ To Do:
 Done-- Basic styling, Pages(Home,About,Contact)
 Done-- Choose template style
 Done-- Set up dashboard parts etc and link.
+Done-- Create dashboard basic
+Done-- php artisan make:auth && migrate
 
-Create dashboard basic dummy pages
-
-======================
-Last update
-======================
+Move login page and register page to my template
+Dashboard dummy pages

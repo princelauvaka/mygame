@@ -38,12 +38,12 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/posts') }}"><i class="fa fa-btn fa-sign-out"></i>Posts</a></li>
-                                <li><a href="{{ route('categories.index') }}"><i class="fa fa-btn fa-sign-out"></i>Categories</a></li>
-                                <li><a href="{{ route('tags.index') }}"><i class="fa fa-btn fa-sign-out"></i>Tags</a></li>
-                                <li><a href="{{ url('/posts/create') }}"><i class="fa fa-btn fa-sign-out"></i>Create Posts</a></li>
+                                <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Posts</a></li>
+                                <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Categories</a></li>
+                                <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Tags</a></li>
+                                <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Create Posts</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="$"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
                     @endif

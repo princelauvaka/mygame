@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('inc.templates.t_front')
+@section('title', 'Email')
+
 
 <!-- Main Content -->
 @section('content')

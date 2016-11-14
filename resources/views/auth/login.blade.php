@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('inc.templates.t_front')
+@section('title', 'Login')
 
 @section('content')
 <div class="container">
