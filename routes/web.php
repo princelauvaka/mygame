@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/','PagesController@getIndex');
 
@@ -17,7 +18,7 @@ Route::get('about','PagesController@getAbout');
 
 Route::get('contact','PagesController@getContact');
 
-Route::get('dash','PagesController@getDash');
-Auth::routes();
+Route::get('dash','Dash\DashController@index');
 
-Route::get('/home', 'HomeController@index');
+Route::get('users','Dash\UsersController@index');
+

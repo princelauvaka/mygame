@@ -43,7 +43,15 @@
                                 <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Tags</a></li>
                                 <li><a href="#"><i class="fa fa-btn fa-sign-out"></i>Create Posts</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="$"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li>                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
                             </ul>
                         </li>
                     @endif

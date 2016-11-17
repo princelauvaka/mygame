@@ -1,4 +1,4 @@
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="purple" data-image="assetz/img/sidebar-5.jpg">
 
     <!--
 
@@ -10,18 +10,55 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    gameon.nz
                 </a>
             </div>
 
             <ul class="nav">
+
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="{{ url('/dash') }}">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>Dashboard *</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ url('/users') }}">
+                        <i class="pe-7s-graph"></i>
+                        <p>Users *</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph"></i>
+                        <p>Groups *</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph"></i>
+                        <p>Competitions *</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph"></i>
+                        <p>Teams *</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph"></i>
+                        <p>Matches *</p>
                     </a>
                 </li>
 
             </ul>
         </div>
+
     </div>
