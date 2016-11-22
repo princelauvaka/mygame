@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-
+use App\User;
 class UsersController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('dashboard.users.index');
+        $users = User::all();
+        return view('dashboard.users.index')->withUsers($users);
     }
 
     /**
@@ -25,7 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.users.create');
     }
 
     /**

@@ -12,8 +12,8 @@ Done-- Create dashboard basic
 Done-- php artisan make:auth && migrate
 Done-- Move login page and register page to my template
 Done-- permission access for dashboard
+Done-- list all users
 
-list all users
 CRUD for user
 Get login username and dispaly in dash
 Make other tabs in left nav
