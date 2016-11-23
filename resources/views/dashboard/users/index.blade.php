@@ -6,13 +6,13 @@
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-lg-6">
 				<div class="card">
 
 					<div class="header">
 						<h4 class="title pull-left">Users</h4>
 						{{-- <a class="btn btn-info btn-fill pull-right">Create</a> --}}
-						{{ Html::linkRoute('create', 'Create', array(),array('class' => 'btn btn-info btn-fill pull-right')) }}
+						{{ Html::linkRoute('users.create', 'Create', array(),array('class' => 'btn btn-primary btn-fill pull-right')) }}
 					</div>
 
 					<div class="content table-responsive table-full-width">
@@ -22,6 +22,7 @@
 								<tr>
 									<th>#</th>
 									<th>Name</th>
+									<th>Email</th>
 								</tr>
 							</thead>
 
@@ -30,6 +31,8 @@
 								<tr>
 									<th>{{ $user->id }}</th>
 									<td>{{ $user->name }}</td>
+
+									<td>{{ $user->email }}</td>
 								</tr>
 								@endforeach
 							</tbody>

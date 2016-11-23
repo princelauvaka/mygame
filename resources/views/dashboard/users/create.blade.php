@@ -3,10 +3,17 @@
 @section('content')
 
 
-<div class="container">
-	<div class="row">
-	    <div class="col-lg-12">
-	    	<h1>Users - Create</h1>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    
+                    <div class="header">
+                        <h4 class="title">Users / Create</h4>
+                        <p>Add a new user</p>
+                    </div>
+                    
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
@@ -62,16 +69,18 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-fill">
                                     Register
                                 </button>
                             </div>
                         </div>
                     </form>
-	    </div>
-	</div>	
-</div>
 
+                </div>
+            </div>	
+        </div>
+    </div>
+</div>
 
 @stop
 
