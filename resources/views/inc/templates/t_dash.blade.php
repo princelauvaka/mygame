@@ -22,6 +22,8 @@
             <div class="container-fluid">
                 <div class="row">
 
+                @include('inc.parts.dash.msgs')
+
 				@yield('content')
 				
                 </div>

@@ -33,6 +33,10 @@
 									<td>{{ $user->name }}</td>
 
 									<td>{{ $user->email }}</td>
+									<td>
+										{{ Html::linkRoute('users.edit', 'Edit', array($user->id),array()) }}
+										{{ Html::linkRoute('users.show', 'View', array($user->id),array()) }}
+									</td>
 								</tr>
 								@endforeach
 							</tbody>

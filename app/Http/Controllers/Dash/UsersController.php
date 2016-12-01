@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Session;
+
 class UsersController extends Controller
 {
     /**
@@ -37,7 +39,28 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // validate data
+        $this->validate($request, array(
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6|confirmed'
+            ));
+
+        // store in database
+        $user = new User;
+
+        $user->name         = $request->name;
+        $user->email        = $request->email;
+        $user->password     = bcrypt($request->password);
+
+        $user->save();
+
+        Session::flash('success','New user "'.$request->name.'" has been added ');
+
+        // redirect to another page
+        return redirect('dash');
+        // return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -48,7 +71,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('dashboard.users.show')->withUser($user);
     }
 
     /**
@@ -59,7 +83,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('dashboard.users.edit')->withUser($user);
     }
 
     /**
@@ -72,6 +97,21 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::find($id);
+
+        $this->validate($request, array(
+            'name'      => 'required|max:100',
+            'email'     => 'required|email|max:255|unique:users'
+            ));
+
+        $user->name     = $request->input('name');
+        $user->email    = $request->input('email');
+
+        $user->save();
+
+        Session::flash('success','User updated');
+
+        return redirect()->route('users.show',$user->id);
     }
 
     /**
