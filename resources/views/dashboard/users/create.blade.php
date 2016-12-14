@@ -14,6 +14,7 @@
                         <p>Add a new user</p>
                     </div>
                     
+                    <div class="content">
                     {!! Form::open(array('route' => 'users.store','class' => 'form-horizontal')) !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -74,7 +75,9 @@
                             </div>
                         </div>
                     </form>
+                    </div>
 
+                    
                 </div>
             </div>	
         </div>

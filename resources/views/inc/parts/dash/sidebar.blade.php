@@ -33,7 +33,7 @@
                 <li class="active">
                     <a href="#">
                         <i class="pe-7s-graph"></i>
-                        <p>Groups *</p>
+                        <p>Roles *</p>
                     </a>
                 </li>
 

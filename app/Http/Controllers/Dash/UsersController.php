@@ -99,9 +99,10 @@ class UsersController extends Controller
         //
         $user = User::find($id);
 
+        //if email has not changed
         $this->validate($request, array(
             'name'      => 'required|max:100',
-            'email'     => 'required|email|max:255|unique:users'
+            'email'     => 'required|email|max:255|unique:users,email,'.$id
             ));
 
         $user->name     = $request->input('name');
@@ -122,6 +123,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->delete();
+
+        Session::flash('success','User Deleted');
+
+        return redirect()->route('users.index');
     }
 }

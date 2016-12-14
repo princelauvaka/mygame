@@ -11,11 +11,13 @@
     <link href="{{ URL::asset('assetz/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
-    <link href="{{ URL::asset('assetz/css/animate.min.css') }} rel="stylesheet"/>
+    <link href="{{ URL::asset('assetz/css/animate.min.css') }}" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="{{ URL::asset('assetz/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
     
+    <!--  Main Css    -->
+    <link href="{{ URL::asset('assetz/css/main.css') }}" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

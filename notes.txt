@@ -1,5 +1,5 @@
 11 Nov 16
-12.41
+12.41pm
 Fresh Laravel Install
 
 ======================
@@ -13,6 +13,12 @@ Done-- php artisan make:auth && migrate
 Done-- Move login page and register page to my template
 Done-- permission access for dashboard
 Done-- list all users
+Done-- Delete left to do for users CRUD
+
+Previous Activity:
+Some css alignment for error messages
+Model, Migration, Controller created for roles
+
 
 CRUD for user
 Get login username and dispaly in dash
