@@ -26,12 +26,12 @@
                 <li class="active">
                     <a href="{{ url('/users') }}">
                         <i class="pe-7s-user"></i>
-                        <p>Users *</p>
+                        <p>Users</p>
                     </a>
                 </li>
 
                 <li class="active">
-                    <a href="#">
+                    <a href="{{ url('/roles') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Roles *</p>
                     </a>

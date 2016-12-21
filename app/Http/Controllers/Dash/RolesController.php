@@ -14,7 +14,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.roles.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.roles.create');
     }
 
     /**
@@ -35,7 +35,24 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate data
+        $this->validate($request, array(
+                'name' => 'required|max:255|unique:roles',
+                'description' => 'required|max:255|unique:users'
+            ));
+
+        // store in database
+        $roles = new Troles;
+
+        $roles->name        = $request->name;
+        $roles->description = $request->description;
+
+        $roles->save();
+
+        Session::flash('success','New user "'.$request->role.'" has been added ');
+
+        // redirect to another page
+        return redirect('roles');
     }
 
     /**

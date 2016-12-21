@@ -20,7 +20,7 @@
 							{!! Form::close() !!}
 					</div>
 				</div>
-
+  
 				<div class="card">
 
 					<div class="header">

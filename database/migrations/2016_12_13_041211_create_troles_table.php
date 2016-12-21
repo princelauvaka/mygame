@@ -16,6 +16,8 @@ class CreateTrolesTable extends Migration
         Schema::create('troles', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('name', 30);
+            $table->string('description', 100);
         });
     }
 

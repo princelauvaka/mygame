@@ -15,43 +15,20 @@
                     </div>
                     
                     <div class="content">
-                        {!! Form::open(array('route' => 'posts.store')) !!}
+                        {!! Form::open(array('route' => 'roles.store')) !!}
 
                             <div class="form-group">
-                                    {{ Form::label('title','Title:') }}
-                                    {{ Form::text('title', null, array('class' => 'form-control')) }}
+                                    {{ Form::label('name','Name:') }}
+                                    {{ Form::text('name', null, array('class' => 'form-control')) }}
                             </div>
 
                                 <div class="form-group">
-                                    {{ Form::label('slug', 'Slug:') }}
-                                    {{ Form::text('slug', null, array('class' => 'form-control', 'minlength' => '5', 'maxlength' => '255') ) }}
-                            </div>
-
-                            <div class="form-group">
-                                {{ Form::label('category_id','Category:') }}
-                                <select name="category_id" class="form-control">
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                {{ Form::label('tags','Tags:') }}
-                                <select name="tags[]" class="form-control select2-multi" multiple="multiple">
-                                    @foreach($tags as $tag)
-                                        <option value="{{$tag->id}}">{{ $tag->name }}</option>
-                                    @endforeach
-                                </select>
+                                    {{ Form::label('description', 'Description:') }}
+                                    {{ Form::textarea('description', null, array('class' => 'form-control') ) }}
                             </div>
 
 
-                            <div class="form-group">
-                                {{ Form::label('body','Post body:') }}
-                                {{ Form::textarea('body', null, array('class' => 'form-control')) }}
-                            </div>
-
-                                {{ Form::submit('Create Post',array('class' => 'btn btn-primary')) }}
+                        {{ Form::submit('Create Role',array('class' => 'btn btn-primary btn-fill')) }}
 
                         {!! Form::close() !!}
                     </div>

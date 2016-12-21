@@ -23,6 +23,6 @@ Route::get('dash','Dash\DashController@index');
 Route::resource('users', 'Dash\UsersController');
 
 Route::resource('roles', 'Dash\RolesController');
-// Route::get('users','Dash\UsersController@index');
-// Route::get('create','Dash\UsersController@create');
+
+
 

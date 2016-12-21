@@ -5,4 +5,5 @@ $( document ).ready(function() {
     		// console.log('testing');
         	$('.areyousure').slideDown(100);
     });
+
 });
