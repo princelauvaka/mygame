@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Trole;
 use Session;
 
 class UsersController extends Controller
@@ -28,7 +29,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('dashboard.users.create');
+        $roles       = Trole::all();
+        return view('dashboard.users.create')->withRoles($roles);
     }
 
     /**
@@ -55,6 +57,8 @@ class UsersController extends Controller
         $user->password     = bcrypt($request->password);
 
         $user->save();
+
+        $user->roles()->sync($request->roles, false);
 
         Session::flash('success','New user "'.$request->name.'" has been added ');
 
@@ -83,8 +87,16 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('dashboard.users.edit')->withUser($user);
+        $user   = User::find($id);
+
+        $roles   = Trole::all();
+        $rolez  = array();
+
+        foreach($roles as $role){
+            $rolez[$role->id] = $role->name;
+        }
+
+        return view('dashboard.users.edit')->withUser($user)->withRolez($rolez);
     }
 
     /**
@@ -109,6 +121,13 @@ class UsersController extends Controller
         $user->email    = $request->input('email');
 
         $user->save();
+
+        if(isset($request->roles)){
+            $user->roles()->sync($request->roles);
+        }else{
+            $user->roles()->sync(array());
+        }
+
 
         Session::flash('success','User updated');
 

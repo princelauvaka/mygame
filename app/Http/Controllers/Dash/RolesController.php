@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Dash;
 
+use App\Trole;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 
 class RolesController extends Controller
 {
@@ -14,7 +16,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.roles.index');
+        $roles = Trole::all();
+        return view('dashboard.roles.index')->withRoles($roles);
     }
 
     /**
@@ -37,12 +40,14 @@ class RolesController extends Controller
     {
         // validate data
         $this->validate($request, array(
-                'name' => 'required|max:255|unique:roles',
-                'description' => 'required|max:255|unique:users'
+                'name' => 'required|max:255|unique:troles',
+                'description' => 'required|max:255'
             ));
 
+
+
         // store in database
-        $roles = new Troles;
+        $roles = new Trole;
 
         $roles->name        = $request->name;
         $roles->description = $request->description;
@@ -52,7 +57,7 @@ class RolesController extends Controller
         Session::flash('success','New user "'.$request->role.'" has been added ');
 
         // redirect to another page
-        return redirect('roles');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -74,7 +79,8 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Trole::find($id);
+        return view('dashboard.roles.edit')->withRole($role);
     }
 
     /**
@@ -86,7 +92,22 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $roles = Trole::find($id);
+
+        //if email has not changed
+        $this->validate($request, array(
+            'name'            => 'required|max:100|unique:users,email,'.$id,
+            'description'     => 'required|max:255'
+            ));
+
+        $roles->name           = $request->input('name');
+        $roles->description    = $request->input('description');
+
+        $roles->save();
+
+        Session::flash('success','Roles updated');
+
+        return redirect()->route('roles.index',$roles->id);
     }
 
     /**
@@ -97,6 +118,12 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Trole::find($id);
+
+        $role->delete();
+
+        Session::flash('success','Role Deleted');
+
+        return redirect()->route('roles.index');
     }
 }

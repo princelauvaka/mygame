@@ -13,6 +13,7 @@
 						<h4 class="title pull-left">Users</h4>
 						{{-- <a class="btn btn-info btn-fill pull-right">Create</a> --}}
 						{{ Html::linkRoute('users.create', 'Create', array(),array('class' => 'btn btn-primary btn-fill pull-right')) }}
+						{{-- {{ $users->roles() }} --}}
 					</div>
 
 					<div class="content table-responsive table-full-width">
@@ -23,6 +24,8 @@
 									<th>#</th>
 									<th>Name</th>
 									<th>Email</th>
+									<th>Role</th>
+									<th>Edit/View</th>
 								</tr>
 							</thead>
 
@@ -34,9 +37,13 @@
 
 									<td>{{ $user->email }}</td>
 									<td>
+										{{ $user->roles->first()->name }}
+									</td>
+									<td>
 										{{ Html::linkRoute('users.edit', 'Edit', array($user->id),array()) }}
 										{{ Html::linkRoute('users.show', 'View', array($user->id),array()) }}
 									</td>
+
 								</tr>
 								@endforeach
 							</tbody>

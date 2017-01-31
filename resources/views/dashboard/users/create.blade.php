@@ -1,5 +1,10 @@
 @extends('inc.templates.t_dash')
 @section('title','Create Users')
+
+@section('stylesheets')
+{!! Html::style('assetz/css/select2.min.css') !!}
+@stop
+
 @section('content')
 
 
@@ -68,6 +73,15 @@
                         </div>
 
                         <div class="form-group">
+                            {{ Form::label('roles','Roles:') }}
+                            <select name="roles[]" class="form-control select2-multi" multiple="multiple">
+                                @foreach($roles as $role)
+                                    <option value="{{$role->id}}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-fill">
                                     Register
@@ -85,4 +99,25 @@
 </div>
 
 @stop
+
+@section('scripts')
+
+    {!! Html::script('assetz/js/select2.min.js') !!}
+    <script>
+        $('.select2-multi').select2();
+    </script>
+@stop
+
+
+
+
+
+
+
+
+
+
+
+
+
 

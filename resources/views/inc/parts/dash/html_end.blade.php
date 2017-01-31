@@ -20,4 +20,6 @@
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="{{ URL::asset('assetz/js/demo.js') }}"></script>
 
+@yield('scripts')
+
 <script src="{{ URL::asset('assetz/js/main.js') }}"></script>

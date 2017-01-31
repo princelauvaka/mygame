@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrolesTable extends Migration
+class CreateTroleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CreateTrolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('troles', function (Blueprint $table) {
+        Schema::create('trole_user', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('trole_id')->unsigned();
+            $table->foreign('trole_id')->references('id')->on('troles'); 
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
-            $table->string('name', 30);
-            $table->string('description', 100);
         });
     }
 
@@ -28,6 +33,6 @@ class CreateTrolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('troles');
+        Schema::drop('trole_user');
     }
 }

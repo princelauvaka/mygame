@@ -14,13 +14,36 @@ Done-- Move login page and register page to my template
 Done-- permission access for dashboard
 Done-- list all users
 Done-- Delete left to do for users CRUD
+Done-- Roles CRUD completed
+Done-- Migration for troles_user
+Done-- display users roles from user.index
+-- troles_user Many to Many
 
+
+
+
+
+======================
 Previous Activity:
+======================
+display users roles from user.index
+
+Migration for troles_user
+roles.edit styling & users.edit
+
+edit delete completed for roles
+
+
+fixing route(roles.edit) for padding Zz
+
+Troles create function working well
+
+p(1.0): the error occured from the validation error eg:  'name' => 'required|max:255|unique:users' when
+it should be  'name' => 'required|max:255|unique:troles'
+
+p(1.0): tried to create role, validation. PROBLEM: Check Naming convention for model and tables (plural y/n)
+
 Some css alignment for error messages
 Model, Migration, Controller created for roles
 
-
-CRUD for user
-Get login username and dispaly in dash
-Make other tabs in left nav
 zzZZ this guys used Pixeden on his template

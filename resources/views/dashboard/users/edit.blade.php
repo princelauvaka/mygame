@@ -1,5 +1,8 @@
 @extends('inc.templates.t_dash')
 @section('title','Edit User')
+@section('stylesheets')
+{!! Html::style('assetz/css/select2.min.css') !!}
+@stop
 @section('content')
 
 
@@ -27,36 +30,32 @@
 						<h4 class="title">Users / Edit</h4>
 					</div>
 
-					<div class="content container-fluid">
+					<div class="content">
 
-						{!! Form::model($user, ['route' => ['users.update',$user->id], 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
-						{{-- {!! Form::open(array('class'=> 'form-horizontal')) !!} --}}
+						{!! Form::model($user, ['route' => ['users.update',$user->id], 'method' => 'PUT']) !!}
 
 						<div class="form-group">
-							{{ Form::label('name', 'Name:',['class' => 'col-md-4 control-label']) }}
-							<div class="col-md-6">
+							{{ Form::label('name', 'Name:') }}
 							{{ Form::text('name', null, ['class' => 'form-control']) }}
-							</div>
 						</div>
 
 						<div class="form-group">
-							{{ Form::label('email', 'Email:',['class' => 'col-md-4 control-label']) }}
-
-							<div class="col-md-6">
+							{{ Form::label('email', 'Email:') }}
 							{{ Form::text('email', null, ['class' => 'form-control']) }}
-							</div>
 						</div>
 
 						<div class="form-group">
-							<div class="col-md-6">
-							{{ Form::submit('Save Changes', ['class'=> 'btn btn-primary btn-fill btn-block']) }}
-							</div>
-							<div class="col-md-6">
-								<a href="#" class="duser btn btn-danger btn-fill btn-block">Delete</a>
-							</div>
+							{{ Form::label('roles', 'Roles', ['class' => 'form-spacing-top']) }}
+							{{ Form::select('roles[]', $rolez, null, ['class' => 'form-control select2-multi' ,'multiple' => 'multiple']) }}
+						</div>
+
+						<div class="form-group">
+							{{ Form::submit('Save Changes', ['class'=> 'btn btn-primary btn-fill ']) }}
+							<a href="#" class="delete-one btn btn-default btn-fill ">Delete</a>
 						</div>
 						
 						{!! Form::close() !!}
+						
 					</div>
 				</div>
 			</div>
@@ -65,5 +64,13 @@
 </div>
 
 
+@stop
+@section('scripts')
+
+    {!! Html::script('assetz/js/select2.min.js') !!}
+    <script>
+        $('.select2-multi').select2();
+		$('.select2-multi').select2().val({!! json_encode($user->roles()->getRelatedIds()) !!}).trigger('change');
+    </script>
 @stop
 
