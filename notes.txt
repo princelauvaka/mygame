@@ -17,15 +17,18 @@ Done-- Delete left to do for users CRUD
 Done-- Roles CRUD completed
 Done-- Migration for troles_user
 Done-- display users roles from user.index
+setup new table etc
+
+
 -- troles_user Many to Many
-
-
-
-
 
 ======================
 Previous Activity:
 ======================
+simultaneously create CRUD for Comps and Groups
+
+setup new table etc
+
 display users roles from user.index
 
 Migration for troles_user
@@ -47,3 +50,30 @@ Some css alignment for error messages
 Model, Migration, Controller created for roles
 
 zzZZ this guys used Pixeden on his template
+
+======================
+Hours:
+======================
+8.5
+
+======================
+Steps for New Table:
+======================
+Controller:
+php artisan make:controller Dash/GroupsController --resource
+
+Views:
+CRUD , index etc
+
+Routes:
+Route::resource('groups', 'Dash\GroupsController');
+
+Model:
+php artisan make:model Tgroup
+
+Migration:
+php artisan make:migration create_tgroups_table
+open file and make edits
+php artisan migrate
+
+Controller - C*reate

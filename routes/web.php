@@ -24,5 +24,9 @@ Route::resource('users', 'Dash\UsersController');
 
 Route::resource('roles', 'Dash\RolesController');
 
+Route::resource('groups', 'Dash\GroupsController');
+
+Route::resource('comps', 'Dash\CompsController');
+
 
 

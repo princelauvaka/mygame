@@ -33,14 +33,21 @@
                 <li class="active">
                     <a href="{{ url('/roles') }}">
                         <i class="pe-7s-graph"></i>
-                        <p>Roles *</p>
+                        <p>Roles</p>
                     </a>
                 </li>
 
                 <li class="active">
-                    <a href="#">
+                    <a href="{{ url('/groups') }}">
                         <i class="pe-7s-graph"></i>
-                        <p>Competitions *</p>
+                        <p>Groups</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ url('/comps') }}">
+                        <i class="pe-7s-graph"></i>
+                        <p>Competitions</p>
                     </a>
                 </li>
 

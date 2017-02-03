@@ -128,7 +128,6 @@ class UsersController extends Controller
             $user->roles()->sync(array());
         }
 
-
         Session::flash('success','User updated');
 
         return redirect()->route('users.show',$user->id);
