@@ -25,6 +25,8 @@ setup new table etc
 ======================
 Previous Activity:
 ======================
+storing tcomps, not completed
+
 simultaneously create CRUD for Comps and Groups
 
 setup new table etc

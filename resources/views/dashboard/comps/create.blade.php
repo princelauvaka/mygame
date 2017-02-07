@@ -51,6 +51,17 @@
                             </div>
 
                             <div class="form-group">
+                                {{ Form::label('suburb', 'Suburb:') }}
+                                {{ Form::text('suburb', null, array('class' => 'form-control') ) }}
+
+                                @if ($errors->has('suburb'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('suburb') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
                                 {{ Form::label('logo', 'Logo:') }}
                                 {{ Form::file('logo', null, array('class' => 'form-control') ) }}
 
@@ -62,7 +73,7 @@
                             </div>
 
 
-                        {{ Form::submit('Create Group',array('class' => 'btn btn-primary btn-fill')) }}
+                        {{ Form::submit('Create Competition',array('class' => 'btn btn-primary btn-fill')) }}
 
                         {!! Form::close() !!}
                     </div>

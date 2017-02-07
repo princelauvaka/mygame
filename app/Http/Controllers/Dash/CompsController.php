@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dash;
 
+use App\Tcomp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -35,7 +36,30 @@ class CompsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate data
+        $this->validate($request, array(
+                'name'      => 'required|max:255|unique:tcomps',
+                'country'   => 'required|max:255',
+                'city'      => 'required|max:255',
+                'suburb'    => 'required|max:255',
+                'logo'      => 'required|mimes:jpeg,png'
+            ));
+
+        // store in database
+        $comps = new Tcomp;
+
+        $comps->name = $request->name;
+        $comps->country = $request->country;
+        $comps->city = $request->city;
+        $comps->suburb = $request->suburb;
+        $comps->logo = $request->logo;
+
+        $comps->save();
+
+        Session::flash('success','New user "'.$request->name.'" has been added ');
+
+        // redirect to another page
+        return redirect()->route('roles.index');
     }
 
     /**
