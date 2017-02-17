@@ -96,7 +96,7 @@ class RolesController extends Controller
 
         //if email has not changed
         $this->validate($request, array(
-            'name'            => 'required|max:100|unique:users,email,'.$id,
+            'name'            => 'required|max:100|unique:troles,name,'.$id,
             'description'     => 'required|max:255'
             ));
 

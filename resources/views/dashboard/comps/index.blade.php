@@ -8,7 +8,6 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card">
-
 					<div class="header">
 						<h4 class="title pull-left">Comps</h4>
 						{{ Html::linkRoute('comps.create', 'Create', array(),array('class' => 'btn btn-primary btn-fill pull-right')) }}
@@ -23,23 +22,32 @@
 									<th>Name</th>
 									<th>Country</th>
 									<th>City</th>
+									<th>Suburb</th>
 									<th>Logo</th>
 									<th>Edit</th>
 								</tr>
 							</thead>
 
 							<tbody>
+								@foreach ($comps as $comp)
 								<tr>
-									<td>1</td>
-									<td>FOX Memorial</td>
-									<td>New Zealand</td>
-
-									<td>Auckland</td>
-									<td>JPG</td>
+									<td>{{ $comp->id }}</td>
+									<td><strong>{{ $comp->name}}</strong></td>
+									<td>{{ $comp->country }}</td>
+									<td>{{ $comp->city }}</td>
+									<td>{{ $comp->suburb }}</td>
 									<td>
-										<a href="#">Edit</a>
+										@if ( !empty( $comp->logo ) )
+										<img src="
+										{{ URL::asset('assets/img/logos/'.$comp->logo) }}
+										" alt="{{ $comp->name }}-logo" width="auto" height="50">
+										@endif
+									</td>
+									<td>
+										{{ Html::linkRoute('comps.edit', 'Edit', array($comp->id),array()) }}
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 

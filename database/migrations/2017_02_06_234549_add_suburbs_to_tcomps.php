@@ -14,7 +14,7 @@ class AddSuburbsToTcomps extends Migration
     public function up()
     {
         Schema::table('tcomps', function($table){
-            $table->string('suburbs')->unique()->after('city');
+            $table->string('suburb')->after('city');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSuburbsToTcomps extends Migration
     public function down()
     {
         Schema::table('tcomps', function($table){
-            $table->dropColumn('suburbs');
+            $table->dropColumn('suburb');
         });
     }
 }

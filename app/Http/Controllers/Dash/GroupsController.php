@@ -14,7 +14,26 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.groups.index');
+        $uuid = $this->gen_uuid();
+        return view('dashboard.groups.index')->withUid($uuid);
+    }
+
+    private function gen_uuid($len=5) {
+        
+        $salt = uniqid(mt_rand(), true);
+        $hex = md5($salt . uniqid("", true));
+
+        $pack = pack('H*', $hex);
+        $tmp =  base64_encode($pack);
+
+        $uid = preg_replace("#(*UTF8)[^A-Za-z0-9]#", "", $tmp);
+
+        $len = max(4, min(128, $len));
+
+        while (strlen($uid) < $len)
+            $uid .= gen_uuid(22);
+
+        return substr($uid, 0, $len);
     }
 
     /**

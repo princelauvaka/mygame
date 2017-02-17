@@ -17,46 +17,29 @@ Done-- Delete left to do for users CRUD
 Done-- Roles CRUD completed
 Done-- Migration for troles_user
 Done-- display users roles from user.index
-setup new table etc
+Done-- tcomps image uplaod, C* done.
+Done-- Image:: Resize, make adjustments
+Done-- Display comps on comps.index
+Done-- Delete comps
+Done-- CRUD comps
+
+groups
+generate unique short code for groups
+
+Create Facades for unique code generating
+http://www.n0impossible.com/article/how-to-create-facade-on-laravel-51
+
+UX delete button for all cruds
 
 
--- troles_user Many to Many
-
-======================
-Previous Activity:
-======================
-storing tcomps, not completed
-
-simultaneously create CRUD for Comps and Groups
-
-setup new table etc
-
-display users roles from user.index
-
-Migration for troles_user
-roles.edit styling & users.edit
-
-edit delete completed for roles
 
 
-fixing route(roles.edit) for padding Zz
 
-Troles create function working well
-
-p(1.0): the error occured from the validation error eg:  'name' => 'required|max:255|unique:users' when
-it should be  'name' => 'required|max:255|unique:troles'
-
-p(1.0): tried to create role, validation. PROBLEM: Check Naming convention for model and tables (plural y/n)
-
-Some css alignment for error messages
-Model, Migration, Controller created for roles
-
-zzZZ this guys used Pixeden on his template
 
 ======================
 Hours:
 ======================
-8.5
+11
 
 ======================
 Steps for New Table:
@@ -79,3 +62,37 @@ open file and make edits
 php artisan migrate
 
 Controller - C*reate
+
+======================
+Notes:
+======================
+
+*Image Upload
+https://www.youtube.com/watch?v=N_i3UFw0_84
+http://image.intervention.io
+root/storage: usually for private files, sophisticated code needed here
+root/public: for the world to see
+migration need so the db can accept the file
+
+*Image Delete
+https://www.youtube.com/watch?v=NEejXnGFvX8
+
+*Look in to creating your own Facades
+
+
+======================
+Extras:
+======================
+fixing route(roles.edit) for padding Zz
+
+Troles create function working well
+
+p(1.0): the error occured from the validation error eg:  'name' => 'required|max:255|unique:users' when
+it should be  'name' => 'required|max:255|unique:troles'
+
+p(1.0): tried to create role, validation. PROBLEM: Check Naming convention for model and tables (plural y/n)
+
+Some css alignment for error messages
+Model, Migration, Controller created for roles
+
+zzZZ this guys used Pixeden on his template

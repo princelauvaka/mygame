@@ -15,7 +15,7 @@
 @endif
 
 @if (count($errors) > 0)
-	<div class="row">
+	<div class="row all-errors">
 		<div class="container no-margin">
 			<div class="col-lg-12">
 				<div class="alert alert-danger" role="alert">

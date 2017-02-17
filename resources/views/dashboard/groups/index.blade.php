@@ -7,8 +7,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6">
-				<div class="card">
 
+				<h1>{{ $uid }}</h1>
+				<div class="card">
 					<div class="header">
 						<h4 class="title pull-left">Groups</h4>
 
