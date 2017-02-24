@@ -24,6 +24,10 @@ Route::resource('users', 'Dash\UsersController');
 
 Route::resource('roles', 'Dash\RolesController');
 
+Route::get('groups/autocomplete',[
+	'as' 		=> 'groups.autocomplete',
+	'uses' 	=> 'Dash\GroupsController@autocomplete'
+	]);
 Route::resource('groups', 'Dash\GroupsController');
 
 Route::resource('comps', 'Dash\CompsController');

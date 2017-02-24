@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tgroup extends Model
 {
-    //
+	public function comp(){
+		return $this->hasOne('App\Tcomp');
+	}
 }

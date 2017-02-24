@@ -22,24 +22,18 @@ Done-- Image:: Resize, make adjustments
 Done-- Display comps on comps.index
 Done-- Delete comps
 Done-- CRUD comps
+Done-- generate unique short code for groups
+Done-- autocomplete for comps field in groups.create
 
-groups
-generate unique short code for groups
-
-Create Facades for unique code generating
-http://www.n0impossible.com/article/how-to-create-facade-on-laravel-51
-
-UX delete button for all cruds
-
-
-
+complete CRUD for Groups
+currently doing store groups
 
 
 
 ======================
 Hours:
 ======================
-11
+13
 
 ======================
 Steps for New Table:
@@ -96,3 +90,16 @@ Some css alignment for error messages
 Model, Migration, Controller created for roles
 
 zzZZ this guys used Pixeden on his template
+
+https://www.youtube.com/watch?v=GqvP4KD9Jcc
+* Get method, internal server 500 solved. typo.
+* eg groups/autocomplete?term=t is working and showing data 
+* styles added for j-ui
+* hard coded vars accpeted,
+* need to convert help jquery read the json
+* The main error was not adding the quotes for source: "{{ URL:: }}"
+
+Create Facades for unique code generating
+http://www.n0impossible.com/article/how-to-create-facade-on-laravel-51
+
+UX delete button for all cruds

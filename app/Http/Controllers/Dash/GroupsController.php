@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dash;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Tcomp;
 
 class GroupsController extends Controller
 {
@@ -14,26 +15,8 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        $uuid = $this->gen_uuid();
-        return view('dashboard.groups.index')->withUid($uuid);
-    }
-
-    private function gen_uuid($len=5) {
         
-        $salt = uniqid(mt_rand(), true);
-        $hex = md5($salt . uniqid("", true));
-
-        $pack = pack('H*', $hex);
-        $tmp =  base64_encode($pack);
-
-        $uid = preg_replace("#(*UTF8)[^A-Za-z0-9]#", "", $tmp);
-
-        $len = max(4, min(128, $len));
-
-        while (strlen($uid) < $len)
-            $uid .= gen_uuid(22);
-
-        return substr($uid, 0, $len);
+        return view('dashboard.groups.index');
     }
 
     /**
@@ -43,7 +26,8 @@ class GroupsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.groups.create');
+        $uuid = $this->gen_uuid();
+        return view('dashboard.groups.create')->withUid($uuid);
     }
 
     /**
@@ -100,5 +84,38 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function gen_uuid($len=5) {
+        
+        $salt = uniqid(mt_rand(), true);
+        $hex = md5($salt . uniqid("", true));
+
+        $pack = pack('H*', $hex);
+        $tmp =  base64_encode($pack);
+
+        $uid = preg_replace("#(*UTF8)[^A-Za-z0-9]#", "", $tmp);
+
+        $len = max(4, min(128, $len));
+
+        while (strlen($uid) < $len)
+            $uid .= gen_uuid(22);
+
+        return substr($uid, 0, $len);
+    }
+
+    public function autocomplete(Request $request)
+    {
+        $term = $request->term; //jquery
+        $data = Tcomp::where('name','LIKE','%'.$term.'%')
+        ->take(3)
+        ->get();
+
+        $results = array();
+        foreach ($data as $key => $v){
+            $results[] = ['id'=>$v->id,'value'=>$v->name];
+        }
+        return response()->json($results);
+        // return 'testing';
     }
 }
