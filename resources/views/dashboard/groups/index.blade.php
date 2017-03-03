@@ -24,26 +24,27 @@
 									<th>#</th>
 									<th>Name</th>
 									<th>Code</th>
-									<th>Players</th>
+									<th>Captian</th>
+									<th>Comp</th>
 									<th>Edit/View</th>
 								</tr>
 							</thead>
 
 							<tbody>
-								
+							@foreach ($groups as $group)
 								<tr>
-									<td>1</td>
-									<td>Spartans</td>
-									<td>IPoiJLK</td>
-									<td>16</td>
+									<td>{{ $group->id }}</td>
+									<td>{{ $group->name }}</td>
+									<td>{{ $group->code }}</td>
+									<td>{{ $group->users->name }}</td>
+									<td>{{ $group->comps->name }}</td>
 									<td><a href="#">Edit</a> / <a href="#">View</a></td>
 								</tr>
-								
+							@endforeach
 							</tbody>
 						</table>
 
 					</div>
-
 
 				</div>
 			</div>

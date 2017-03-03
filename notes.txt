@@ -24,16 +24,14 @@ Done-- Delete comps
 Done-- CRUD comps
 Done-- generate unique short code for groups
 Done-- autocomplete for comps field in groups.create
-
-complete CRUD for Groups
-currently doing store groups
-
+Done-- CREATE groups. using autocomplete , hidden field for compsid
+Done-- List groups.
 
 
 ======================
 Hours:
 ======================
-13
+14
 
 ======================
 Steps for New Table:
