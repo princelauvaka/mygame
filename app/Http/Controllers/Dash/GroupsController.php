@@ -71,7 +71,8 @@ class GroupsController extends Controller
      */
     public function show($id)
     {
-        //
+        $group = Tgroup::find($id);
+        return view('dashboard.groups.show')->withGroup($group);
     }
 
     /**

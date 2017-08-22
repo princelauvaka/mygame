@@ -38,7 +38,9 @@
 									<td>{{ $group->code }}</td>
 									<td>{{ $group->users->name }}</td>
 									<td>{{ $group->comps->name }}</td>
-									<td><a href="#">Edit</a> / <a href="#">View</a></td>
+									<td>{{ Html::linkRoute('groups.edit', 'Edit', array($group->id),array()) }} / {{ Html::linkRoute('groups.show', 'View', array($group->id),array()) }}</td>
+
+										
 								</tr>
 							@endforeach
 							</tbody>
