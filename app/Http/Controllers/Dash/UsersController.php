@@ -20,6 +20,8 @@ class UsersController extends Controller
     {
         $users = User::all();
         return view('dashboard.users.index')->withUsers($users);
+
+        // print_r($users);
     }
 
     /**

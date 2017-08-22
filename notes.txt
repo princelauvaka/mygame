@@ -101,3 +101,5 @@ Create Facades for unique code generating
 http://www.n0impossible.com/article/how-to-create-facade-on-laravel-51
 
 UX delete button for all cruds
+
+If starting out new, some users are needed and some roles need to be assigned to these users

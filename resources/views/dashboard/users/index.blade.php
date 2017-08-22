@@ -15,9 +15,9 @@
 						{{ Html::linkRoute('users.create', 'Create', array(),array('class' => 'btn btn-primary btn-fill pull-right')) }}
 						{{-- {{ $users->roles() }} --}}
 					</div>
-
+					{{-- {{ print_r($users) }} --}}
 					<div class="content table-responsive table-full-width">
-
+							
 						<table class="table table-hover table-striped">
 							<thead>
 								<tr>
@@ -37,7 +37,7 @@
 
 									<td>{{ $user->email }}</td>
 									<td>
-										{{ $user->roles->first()->name }}
+										{{-- {{ $user->roles->first()->name }} --}}
 									</td>
 									<td>
 										{{ Html::linkRoute('users.edit', 'Edit', array($user->id),array()) }}
