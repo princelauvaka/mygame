@@ -26,7 +26,7 @@ Done-- generate unique short code for groups
 Done-- autocomplete for comps field in groups.create
 Done-- CREATE groups. using autocomplete , hidden field for compsid
 Done-- List groups.
-
+Add autocomplete field group.create for selecting captain
 
 ======================
 Hours:

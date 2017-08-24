@@ -8,10 +8,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Tcomp;
 use App\Tgroup;
+use App\User;
 use Session;
 
 class GroupsController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +35,6 @@ class GroupsController extends Controller
      */
     public function create()
     {
-
         $uuid = $this->gen_uuid();
         return view('dashboard.groups.create')->withUid($uuid);
     }
@@ -83,7 +87,20 @@ class GroupsController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $users  = User::all();
+        $userz  = array();
+
+        foreach($users as $user){
+
+            $userz[$user->id] = $user->name;
+
+        }
+
+        $group = Tgroup::find($id);
+
+        return view('dashboard.groups.edit')->withGroup($group)->withUserz($userz);
+
     }
 
     /**
@@ -111,15 +128,15 @@ class GroupsController extends Controller
 
     private function gen_uuid($len=5) {
         
-        $salt = uniqid(mt_rand(), true);
-        $hex = md5($salt . uniqid("", true));
+        $salt   = uniqid(mt_rand(), true);
+        $hex    = md5($salt . uniqid("", true));
 
-        $pack = pack('H*', $hex);
-        $tmp =  base64_encode($pack);
+        $pack   = pack('H*', $hex);
+        $tmp    =  base64_encode($pack);
 
-        $uid = preg_replace("#(*UTF8)[^A-Za-z0-9]#", "", $tmp);
+        $uid    = preg_replace("#(*UTF8)[^A-Za-z0-9]#", "", $tmp);
 
-        $len = max(4, min(128, $len));
+        $len    = max(4, min(128, $len));
 
         while (strlen($uid) < $len)
             $uid .= gen_uuid(22);
